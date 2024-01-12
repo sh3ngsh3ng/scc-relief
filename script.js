@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
             li.innerHTML = `
                                 ${todo.name} <span class="badge bg-primary">${todo.urgency}</span>               
                                 <button class="btn edit-btn btn-success btn-sm">Edit</button>
+                                <button class="btn delete-btn btn-danger btn-sm">Delete</button>
                                 `;
             todoList.appendChild(li)
 
@@ -27,6 +28,14 @@ document.addEventListener('DOMContentLoaded', function () {
                 modifyTask(todos, todo.id, newName, newUrgency)
                 renderTodos(todos);
             })
+
+            li.querySelector(".delete-btn").addEventListener('click', function () {
+                const confirmation = confirm("Do you want to delete the task: " + todo.name + "?");
+                if (confirmation) {
+                    deleteTask(todos, todo.id);
+                    renderTodos(todos);
+                }
+            });
         }
     }
 
