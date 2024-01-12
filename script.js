@@ -13,8 +13,12 @@ document.addEventListener('DOMContentLoaded', function () {
             const taskNameInput = document.querySelector("#taskName")
             const taskName = taskNameInput.value;
 
-            const taskUrgencySelect = document.querySelector("#taskUrgency");
-            const taskUrgency = taskUrgencySelect.value;
+            // const taskUrgencySelect = document.querySelector("#taskUrgency");
+            // const taskUrgency = taskUrgencySelect.value;
+            const taskUrgencyRadio = document.querySelector("input[name='taskUrgency']:checked")
+            // console.log(taskUrgencyRadio.value)
+            const taskUrgency = taskUrgencyRadio.value
+
 
             if (taskName) {
                 addTodo(todos, taskName, taskUrgency);

@@ -20,11 +20,27 @@
         <form id="todo-form">
             <input type="text" id="taskName" class="form-control" placeholder="Task Name">
             <div class="mb-3">
-                <select id="taskUrgency" class="form-control">
+                <!-- <select id="taskUrgency" class="form-control">
                     <option value="low">Low</option>
                     <option value="medium">Medium</option>
                     <option value="high">High</option>
-                </select>
+                </select> -->
+
+                <!-- Radio btn demo -->
+                <label>
+                    <input type="radio" name="taskUrgency" value="low" checked>
+                    Low
+                </label>
+
+                <label>
+                    <input type="radio" name="taskUrgency" value="medium">
+                    Medium
+                </label>
+
+                <label>
+                    <input type="radio" name="taskUrgency" value="high">
+                    High
+                </label>
             </div>
             <input type="submit" id="addTodo" class="btn btn-primary mb-3" value="Add To Do" />
         </form>
