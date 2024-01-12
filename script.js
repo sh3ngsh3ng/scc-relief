@@ -16,8 +16,17 @@ document.addEventListener('DOMContentLoaded', function () {
             li.className = 'list-group-item d-flex justify-content-between align-items-center';
             li.innerHTML = `
                                 ${todo.name} <span class="badge bg-primary">${todo.urgency}</span>               
-                            `;
+                                <button class="btn edit-btn btn-success btn-sm">Edit</button>
+                                `;
             todoList.appendChild(li)
+
+            li.querySelector(".edit-btn").addEventListener('click', function () {
+                // alert("Editing: " + todo.name)
+                const newName = prompt("Enter the new task name: ", todo.name);
+                const newUrgency = prompt("Enter the new urgency: ", todo.urgency)
+                modifyTask(todos, todo.id, newName, newUrgency)
+                renderTodos(todos);
+            })
         }
     }
 
