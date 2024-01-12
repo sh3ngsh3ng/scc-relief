@@ -42,6 +42,16 @@ document.addEventListener('DOMContentLoaded', function () {
                 renderTodos(todos);
             }
 
+            // let student try delete
+            if (event.target.classList.contains('delete-btn')) {
+                const todoId = parseInt(event.target.dataset.taskId);
+
+                const confirmDelete = confirm("Are you sure you want to delete this task?");
+                if (confirmDelete) {
+                    deleteTask(todos, todoId);
+                    renderTodos(todos);
+                }
+            }
         })
     }
 
