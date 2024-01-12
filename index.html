@@ -10,12 +10,27 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container mb-3">
         <h1>Todo List</h1>
         <ul id="todoList" class="list-group">
             <!-- Todo items will be appended here -->
         </ul>
     </div>
+    <div class="container">
+        <div class="mb-3">
+            <input type="text" id="taskName" class="form-control" placeholder="Task Name">
+        </div>
+        <div class="mb-3">
+            <select id="taskUrgency" class="form-control">
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+            </select>
+        </div>
+        <button id="addTodo" class="btn btn-primary mb-3">Add Todo</button>
+    </div>
+
+
 
     <!-- Including data.js and script.js -->
     <script src="data.js"></script>

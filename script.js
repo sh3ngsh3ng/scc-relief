@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function renderTodos(todos) {
         const todoList = document.querySelector("#todoList");
+        todoList.innerHTML = ""
         for (let todo of todos) {
             const li = document.createElement("li")
             li.className = 'list-group-item d-flex justify-content-between align-items-center';
@@ -19,6 +20,21 @@ document.addEventListener('DOMContentLoaded', function () {
             todoList.appendChild(li)
         }
     }
+
+    const addTodoButton = document.querySelector("#addTodo");
+    addTodoButton.addEventListener('click', function () {
+        const taskNameInput = document.querySelector("#taskName")
+        const taskName = taskNameInput.value;
+
+        const taskUrgencySelect = document.querySelector("#taskUrgency");
+        const taskUrgency = taskUrgencySelect.value;
+
+        if (taskName) {
+            addTodo(todos, taskName, taskUrgency);
+            renderTodos(todos);
+            taskNameInput.value = '';
+        }
+    });
 
 
     main();
